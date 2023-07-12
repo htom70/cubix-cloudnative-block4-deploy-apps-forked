@@ -4,9 +4,12 @@ image:
   # Overrides the image tag whose default is the chart appVersion.
   tag: "latest"
 
-env:
-- name: API_MESSAGE_URL
-  value: http://db-spring-cubix:8080
+configMap:
+  enabled: true
+  as: env
+
+openTelemetry:
+  targetUrl: http://tempo.tools:4317
 
 ingress:
   enabled: true
